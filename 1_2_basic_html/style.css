@@ -18,3 +18,20 @@ h3 {
 p {
   font-size: 1em;
 }
+
+.mytable {
+  color: black;
+  width: 950px;
+  background: #e0ab86;
+  border-collapse: collapse;
+  border: 1 px solid black; */
+  letter-spacing: 2px;
+  text-transform: lowercase; */ */
+  
+}
+
+.firstrow {
+
+  background: hwb(258 60% 11%);
+
+}
