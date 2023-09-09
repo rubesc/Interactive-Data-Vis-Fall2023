@@ -2,6 +2,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   padding: 1em;
+  background: linear-gradient(to right,  gold 0%,orange 40%,green 60%, LightBlue 100%);
 }
 
 h1 {

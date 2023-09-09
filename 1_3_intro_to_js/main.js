@@ -9,6 +9,9 @@ const object = {
     key: "value",
 }
 
+var clicks = 0; 
 
-const thing = 1;
-const thingTwo = 2;
+function onClick() {
+    clicks += 1;
+    document.getElementById("clicks").innerHTML = clicks;
+  };
