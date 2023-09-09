@@ -31,7 +31,14 @@ p {
 }
 
 .firstrow {
-
   background: hwb(258 60% 11%);
+}
 
+.rectangleodd {
+  background: hwb(174 49% 12%);
+}
+
+
+.rectangleeven {
+  background: hwb(337 49% 12%);
 }
