@@ -1,5 +1,5 @@
 /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * 0.7,
+const width = window.innerWidth ,
   height = window.innerHeight * 0.7,
   margin = {top: 20, bottom: 60, left: 60, right: 40},
   radius = 5;
@@ -9,15 +9,17 @@ d3.csv("../data/MoMA_distributions.csv", d3.autoType)
   .then(data => {
     console.log(data)
 
+const filteredData = data.filter(artist => artist.ArtistLifespan !== 0);
+
     /* SCALES */
     const xScale = d3.scaleLinear()
-      // .domain([1840,1950])
-      .domain([1800,1990])
+      .domain([1820,1960])
       .range([margin.left, width - margin.right])
 
 
+
     const yScale = d3.scaleLinear()
-      .domain([0,110])
+      .domain([30,110])
       // .domain([30,110]) // to hide the zeros and for better legibility
       .range([height - margin.bottom , margin.top])
 
@@ -47,20 +49,23 @@ d3.csv("../data/MoMA_distributions.csv", d3.autoType)
    // circles
 
    svg.selectAll("circle")
-    .data(data)
+    .data(filteredData)
     .join("circle") 
-    .attr("class","Artist Lifespan")
+    .attr("class","ArtistLifespan")
     .attr("id",d => d.Artist)
-    .attr("r",0) // radius
+    .attr("r", 1) // radius
     .attr("cx", d => xScale(d.BeginDate)) 
     .attr("cy", d => yScale(d.ArtistLifespan) ) 
+    .attr("fill", "pink")
+
     .transition()
-        .duration(1500)
+        .duration(100)
         .delay((d,i) => xScale(d.BeginDate) * 5)
     
-        // .delay((d,i) => i * 5)
-        .attr("r",5)
+        .delay((d,i) => i * 5)
+        .attr("r",d => d.ArtistLifespan * 0.07)
 
-
+    
+        
 
   });
