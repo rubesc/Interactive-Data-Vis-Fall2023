@@ -51,15 +51,9 @@ d3.csv("../data/MoMA_distributions.csv", d3.autoType)
     .join("circle") 
     .attr("class","Artist Lifespan")
     .attr("id",d => d.Artist)
-    .attr("r",0) // radius
+    .attr("r",3) // radius
     .attr("cx", d => xScale(d.BeginDate)) 
     .attr("cy", d => yScale(d.ArtistLifespan) ) 
-    .transition()
-        .duration(1500)
-        .delay((d,i) => xScale(d.BeginDate) * 5)
-    
-        // .delay((d,i) => i * 5)
-        .attr("r",5)
 
 
 
