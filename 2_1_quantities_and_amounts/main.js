@@ -48,6 +48,8 @@ d3.csv('../data/MoMA_topTenNationalities.csv', d3.autoType)
         .attr("width", d => xScale(d.Count))
         .attr("height", yScale.bandwidth())                 // Space inside rec
         .attr("y", d => yScale(d.Nationality))              // y positioning 
+        .attr("fill", "coral")
+
       
 
     const xAxisGroup = svg.append("g")
