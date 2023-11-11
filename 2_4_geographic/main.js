@@ -38,6 +38,7 @@ const width = window.innerWidth * 0.9,
   console.log(pathGen)
 
   // APPEND GEOJSON PATH  
+
   const Country = svg
     .selectAll("path.Country")
     .data(geojson.features)
@@ -45,7 +46,8 @@ const width = window.innerWidth * 0.9,
     .attr("class", "Country")
     .attr("d", d => pathGen(d))
     .attr("stroke", "white")
-    .attr("fill","brown")
+    // .attr("fill","brown")
+    .attr("fill", d => countriesFromCSV.has(d.properties.name) ? "brown" : "lightgrey");
 
 
   // console.log(nationalities.longitude, nationalities.latitude)

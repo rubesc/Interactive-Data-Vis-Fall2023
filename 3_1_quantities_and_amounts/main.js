@@ -1,15 +1,16 @@
 /* CONSTANTS AND GLOBALS */
-// const width = ,
-//   height = ,
-//   margin = ,
-//   radius = ;
+const width = window.innerWidth * 0.7,
+  height = window.innerHeight * 0.7,
+  margin = 2,
+  radius = 2;
 
 // // since we use our scales in multiple functions, they need global scope
-// let xScale, yScale;
+
+let xScale, yScale;
 
 /* APPLICATION STATE */
 let state = {
-  // data: [],
+  data: [],
 };
 
 /* LOAD DATA */
